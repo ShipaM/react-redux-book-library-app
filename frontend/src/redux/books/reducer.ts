@@ -10,8 +10,8 @@ export const booksReducer = (
   switch (action.type) {
     case a.ADD_BOOK:
       return [...state, action?.payload];
-    case a.REMOVE_BOOK:
-      return state.filter((item) => item.title !== action?.payload?.title);
+    case a.DELETE_BOOK:
+      return state.filter((item) => item.id !== action?.payload?.id);
     default:
       return state;
   }
