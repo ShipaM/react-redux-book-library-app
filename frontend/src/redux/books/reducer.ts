@@ -12,6 +12,12 @@ export const booksReducer = (
       return [...state, action?.payload];
     case a.DELETE_BOOK:
       return state.filter((item) => item.id !== action?.payload?.id);
+    case a.TOGGLE_FAVORITE:
+      return state.map((book) =>
+        book.id === action?.payload?.id
+          ? { ...book, isFavorite: !book?.isFavorite }
+          : book
+      );
     default:
       return state;
   }

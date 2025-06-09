@@ -51,7 +51,7 @@
   align-items: center;
 }
 
-.book-list .star-icon {
+.book-list svg {
   width: 24px;
   height: 24px;
   margin: 0 20px;

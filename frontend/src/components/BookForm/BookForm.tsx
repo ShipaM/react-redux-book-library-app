@@ -14,7 +14,12 @@ export const BookForm: FC = () => {
     e.preventDefault();
 
     if (title && author) {
-      const newBook = { title, author, id: uuidv4() };
+      const newBook = {
+        title,
+        author,
+        id: uuidv4(),
+        isFavorite: false,
+      };
 
       dispatch(addBook(newBook));
       setTitle("");
@@ -26,7 +31,7 @@ export const BookForm: FC = () => {
     const randomIndex = Math.floor(Math.random() * booksData.length);
     const randomBook = booksData[randomIndex];
 
-    const randomBookWithId = { ...randomBook, id: uuidv4() };
+    const randomBookWithId = { ...randomBook, id: uuidv4(), isFavorite: false };
 
     dispatch(addBook(randomBookWithId));
   };
